@@ -10,12 +10,13 @@ const Header = () => {
 };
 
 const Heading = styled.h1`
-    background-color: #4CAF50;
+    background-color: #7EAA92;
     color: #fff;
     padding: 20px 0;
     text-align: center;
     margin-bottom: 10px;
     font-size: 36px;
+    width: 100vw;
 `;
 
 export default Header
