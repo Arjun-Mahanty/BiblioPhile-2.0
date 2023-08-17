@@ -1,7 +1,7 @@
 function min(a, b) {
     return (a < b) ? a : b;
 }
-export function levenshteinDistance(str1, str2) {
+function levenshteinDistance(str1, str2) {
     const str1Len = str1.length;
     const str2Len = str2.length;
 
@@ -26,21 +26,31 @@ export function levenshteinDistance(str1, str2) {
     return d[str2Len][str1Len];
 }
 
-export function chatGptQuery(array){
+function chatGptQuery(array){
     const booksNamesArray = [];
     array.forEach(element => {
-        booksNamesArray.push(element.book_name);
+        booksNamesArray.push(element.item.book_name);
     });
     let string = '';
     booksNamesArray.forEach((book)=>{
         string+=`${book}\n`;
     })
-    const query = `I will provide you with 5 book names , give me the top 5 tags that describes that book and the symmary of the book in the format of an object like:\n [{\n \t "book_name":'string',\n \t "tags":[array of top 5 tags],\n \t "summary":'string'\n},\n //similarly for each book\n]\n\n ${string}\nmake a JSON object\n Dont give any affirmation like certainly, of Course etc , just give me the code snippet`;
+    const query = `I will provide you with 5 book names , give me the top 5 tags that describes that book and the symmary of the book in the format of an object like:
+    [{
+         "book_name":"string",
+        "tags":[array of top 5 tags],
+        "summary":"string"
+    },
+    //similarly for each book
+    ]
+    ${string}
+    make a JSON object
+    Dont give any affirmation like certainly, of Course etc , just give me the code snippet`;
     
     return query;
 }
 
-export function mergeArrayOfObjects(arr1,arr2){
+function mergeArrayOfObjects(arr1,arr2){
     const length = arr1.length;
     const mergedArray = [];
     for(let i=0;i<length;i++){
@@ -54,4 +64,10 @@ export function mergeArrayOfObjects(arr1,arr2){
         });
     };
     return mergeArrayOfObjects;
+}
+
+module.exports = {
+     levenshteinDistance,
+     chatGptQuery,
+     mergeArrayOfObjects
 }
