@@ -1,10 +1,11 @@
 import React from 'react'
-import { styled,keyframes } from 'styled-components'
+import { styled,keyframes } from 'styled-components';
+import {NavLink} from 'react-router-dom';
 
 const ViewDetails = () => {
   return (
     <Wrapper>
-      <Button></Button>
+      <Button><NavLink>View Details</NavLink></Button>
     </Wrapper>
   )
 }
@@ -22,10 +23,13 @@ height: 200px;
 `;
 
 const Button = styled.button`
+background-color: white;
+border: none;
+/* &:hover{
+
   height: 40px;
   width: 100px;
   border-radius: 5px;
-  box-shadow: 0 20px 35px rgba(0,0,0,0.3);
   overflow: hidden;
   position: absolute;
   &:before{
@@ -43,11 +47,11 @@ const Button = styled.button`
       #3363ff,
       #b102b7,
       #fd004c
-    );
-    animation:${spin} 1.5s infinite linear ;
-  }
-  &:after{
-    position: absolute;
+      );
+      animation:${spin} 1.5s infinite linear ;
+    }
+    &:after{
+      position: absolute;
     content: "View Details";
     background-color: black;
     color: white;
@@ -60,7 +64,8 @@ const Button = styled.button`
     place-items:center;
     border-radius:5px;
     border: 1px solid black;
-  }
-`;
+  } */
+/* } */
+  `;
 
 export default ViewDetails
