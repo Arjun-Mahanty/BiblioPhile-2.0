@@ -4,7 +4,8 @@ const libController = require('../controllers/libController')
 const router = express.Router();
 
 router.get("/getAll",libController.getAll);
-router.get("/getByName/:name",libController.getByName)
+router.get("/getByName/:name",libController.getByName);
+router.get("/getDetails",libController.getDetails);
 router.post("/add")
 router.delete("/delete/:id")
 router.patch("/update/:id")

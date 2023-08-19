@@ -1,12 +1,12 @@
 const pool = require('../db');
-const query = require('../Queries/query');
+const query = require('../queries/query');
 const { chatGptQuery, levenshteinDistance, mergeArrayOfObjects } = require('../utils/utilityFunctions');
 const { Configuration, OpenAIApi } = require("openai");
 const Fuse = require('fuse.js')
 
-const openai = new OpenAIApi(new Configuration({
-    apiKey: process.env.CHATGPT_API_KEY
-}));
+// const openai = new OpenAIApi(new Configuration({
+//     apiKey: process.env.CHATGPT_API_KEY
+// }));
 
 exports.getAll = (req, res) => {
     pool.query(query.getAllData, (err, result) => {
@@ -47,7 +47,7 @@ exports.getByName = async (req, res) => {
             //     const mergedArray = mergeArrayOfObjects(responseArray, recievedData);
             // })
             if (responseArray.length === 0) {
-                res.status(500).send("Internal Server Error", error);
+                res.status(500).send("Internal Server Error", err);
             } else {
                 res.status(200).send(fuse.search(searchPattern));
             }
@@ -57,4 +57,15 @@ exports.getByName = async (req, res) => {
 
 
 
+};
+
+exports.getDetails = (req,res)=>{
+    const name = req.query.bookName;
+    pool.query(query.getBookByName,[name],(err,result)=>{
+        if(err){
+            res.status(500).send("Internal Server Error",err)
+        } else{
+            res.status(200).send(result.rows)
+        }
+    })
 }

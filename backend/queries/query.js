@@ -1,6 +1,7 @@
-const getAllData = "SELECT * FROM books";
-const getBookByName = "SELECT * FROM books WHERE book_name = $1";
-const Names_authors = "SELECT book_name,author_name FROM books"
+const getAllData = "SELECT * FROM data";
+const getBookByName = "SELECT * FROM data WHERE book_name = $1";
+const Names_authors = "SELECT book_name,author_name FROM data";
+
 
 module.exports = {
     getAllData,
