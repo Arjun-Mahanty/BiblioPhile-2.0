@@ -1,12 +1,7 @@
 const pool = require('../db');
 const query = require('../queries/query');
-const { chatGptQuery, levenshteinDistance, mergeArrayOfObjects } = require('../utils/utilityFunctions');
-const { Configuration, OpenAIApi } = require("openai");
 const Fuse = require('fuse.js')
 
-// const openai = new OpenAIApi(new Configuration({
-//     apiKey: process.env.CHATGPT_API_KEY
-// }));
 
 exports.getAll = (req, res) => {
     pool.query(query.getAllData, (err, result) => {
@@ -38,14 +33,7 @@ exports.getByName = async (req, res) => {
             const fuse = new Fuse(obj, fuseOptions);
             const searchPattern = name;
             const responseArray = fuse.search(searchPattern);
-            // const query = chatGptQuery(responseArray);
-            // openai.createChatCompletion({
-            //     model: "gpt-3.5-turbo",
-            //     messages: [{ role: "user", content: query }]
-            // }).then(res => {
-            //     const recievedData = JSON.parse(res.data.choices[0].message.content);
-            //     const mergedArray = mergeArrayOfObjects(responseArray, recievedData);
-            // })
+            
             if (responseArray.length === 0) {
                 res.status(500).send("Internal Server Error", err);
             } else {
@@ -54,9 +42,6 @@ exports.getByName = async (req, res) => {
 
         }
     });
-
-
-
 };
 
 exports.getDetails = (req,res)=>{
