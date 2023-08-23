@@ -25,7 +25,7 @@ exports.add = async (req,res)=>{
             }
         })
     } 
-    const book_image_link = await getImg();//
+    const book_image_link = await getImg();
 
 
 
