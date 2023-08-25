@@ -2,6 +2,7 @@ const pool = require('../db');
 const query = require('../queries/query');
 
 const dotenv = require('dotenv');
+const path = require('path')
 
 const envPath = path.resolve(__dirname,'../.env');
 
@@ -26,8 +27,11 @@ exports.add = async (req,res)=>{
         })
     } 
     const book_image_link = await getImg();
-
-
+    
+    const book_name = name;
+    
+    
+    const data = {};
 
 }
 
