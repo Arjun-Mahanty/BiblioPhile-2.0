@@ -57,7 +57,4 @@ Open a pull request detailing your changes and their purpose.
 Please ensure your code follows the project's coding style and conventions.
 
 
-Contact
-If you have any questions or suggestions, feel free to reach out to us at contact@bibliophileapp.com or visit our website www.bibliophileapp.com.
-
 Thank you for choosing Bibliophile to manage your library's book collection efficiently. We hope this application enhances your library's functionality and provides users with a seamless reading experience. Happy reading! 📚
