@@ -10,11 +10,6 @@ const ViewDetails = () => {
   )
 }
 
-const spin = keyframes`
-  100%{
-    transform: rotate(-360deg);
-  }
-`;
 
 const Wrapper = styled.div`
 position: relative;
