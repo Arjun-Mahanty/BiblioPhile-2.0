@@ -80,8 +80,11 @@ exports.add = async (req,res)=>{
 }
 
 exports.delete = (req,res)=>{
-    
+    //make a query operation to delete the data matching the name from the parameters
+    //?easy
 }
 exports.update = (req,res)=>{
-    
+    //tkae the details from the body 
+    //find the book for the given name and author name
+    //update the data with new details
 }
