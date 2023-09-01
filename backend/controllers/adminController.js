@@ -1,14 +1,14 @@
-const pool = require('../db');
-const query = require('../queries/query');
+// const pool = require('../db');
+// const query = require('../queries/query');
 
 const dotenv = require('dotenv');
 const path = require('path')
 
 const envPath = path.resolve(__dirname,'../.env');
 
-const openai = new OpenAIApi(new Configuration({
-    apiKey: process.env.CHATGPT_API_KEY
-}));
+// const openai = new OpenAIApi(new Configuration({
+//     apiKey: process.env.CHATGPT_API_KEY
+// }));
 
 const handleGPTreq = require('../utils/GPTrequest');
 
