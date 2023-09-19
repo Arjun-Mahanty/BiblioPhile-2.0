@@ -1,6 +1,20 @@
 const { Configuration, OpenAIApi } = require("openai");
 const path = require('path')
 const dotenv = require('dotenv');
+const { OpenAI } = require("langchain/llms/openai");
+import { LLMChain } from "langchain/chains";
+import { PromptTemplate } from "langchain/prompts";
+
+const llm = new OpenAI({
+    openAIApiKey:process.env.CHATGPT_API_KEY,
+  });
+
+const tagsPrompt = PromptTemplate.fromTemplate("")
+
+const tagsChain = new LLMChain({
+    llm,
+    tagsPrompt
+})
 
 const envPath = path.resolve(__dirname,'../.env');
 
@@ -26,13 +40,13 @@ async function sendMessage(prompt){
     })
 }
 
-function buildPrompt(history){
-    let prompt = '';
-    for(const message of history){
-        prompt += `${message.isAi?"assistant":"user"}:${message.text}`
-    }
-    return prompt;
-}
+// function buildPrompt(history){
+//     let prompt = '';
+//     for(const message of history){
+//         prompt += `${message.isAi?"assistant":"user"}:${message.text}`
+//     }
+//     return prompt;
+// }
 
 exports.handleGPTQurery = async(req,res)=>{
     // const query = req.body.prompt;
