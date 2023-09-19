@@ -7,7 +7,7 @@ const Navbar = () => {
     <Container>
       <Heading><Span>B</Span>ibliophile</Heading>
       <Links>
-        <L to='/home'>Home</L>
+        <L to='/'>Home</L>
         <L to='/books'>Books</L>
         <L to='/about'>About</L>
       </Links>
@@ -16,7 +16,7 @@ const Navbar = () => {
 };
 
 const Container = styled.div`
-    background-color: #7EAA92;
+    /* background-color: #7EAA92; */
     color: #fff;
     padding: 20px 0;
     margin-bottom: 10px;

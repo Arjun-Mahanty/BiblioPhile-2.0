@@ -20,7 +20,7 @@ function App() {
       <Route path='/books' element={<Books/>} />
       <Route exact path='/books/:bookName' element={<DetailsPage/>}/>
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </Router>
   );
 };

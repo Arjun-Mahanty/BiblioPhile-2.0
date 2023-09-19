@@ -1,14 +1,17 @@
 *{
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 
 body {
     margin: 0;
     padding: 0;
-    background-color:#9ED2BE;
+    background-image:url("assets/blurry-gradient-haikei.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
