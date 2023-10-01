@@ -8,13 +8,13 @@ const envPath = path.resolve(__dirname,'../.env');
 // }));
 const handleGPTreq = require('../utils/GPTrequest');
 dotenv.config({path:envPath});
-const { OpenAI } = require("langchain/llms/openai");
-import { LLMChain } from "langchain/chains";
-import { PromptTemplate } from "langchain/prompts";
+// const { OpenAI } = require("langchain/llms/openai");
+// const  { LLMChain } = require("langchain/chains");
+// const  { PromptTemplate } = require("langchain/prompts");
 
-const llm = new OpenAI({
-    openAIApiKey:process.env.CHATGPT_API_KEY,
-  });
+// const llm = new OpenAI({
+//     openAIApiKey:process.env.CHATGPT_API_KEY,
+//   });
 
 exports.add = async (req,res)=>{
     const name = req.body.name;
