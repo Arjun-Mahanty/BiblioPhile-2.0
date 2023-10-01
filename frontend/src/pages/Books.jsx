@@ -15,7 +15,7 @@ const Books = () => {
           <Takeaway>{item.item.key_takeaways}</Takeaway>
           <Tagstd>
             {item.item.tags.map((tag)=>(
-            <li>{tag}</li>
+            <Tag>{tag}</Tag>
              ))}
           </Tagstd>
           <ViewTd>
@@ -88,7 +88,7 @@ const Books = () => {
 
 const Container = styled.div`
     flex: 1;
-    background-color: #C8E4B2;
+    background-color: #c8e4b2a2;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -97,6 +97,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     width: 70%;
+    border: 1px solid black;
     
 `;
 
@@ -226,7 +227,21 @@ const Tagstd = styled.td`
   border-bottom: 1px solid #bebebe;
   height: 50px;
   width: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
   `;
+
+const Tag = styled.li`
+  border: 1px solid black;
+  border-radius:15px;
+  text-align: center;
+  align-items: center;
+  font-size: 13px;
+  padding: 5px;
+`
 
 const ViewTd = styled.td`
 border-bottom: 1px solid #bebebe;
