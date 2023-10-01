@@ -19,7 +19,7 @@ const Home = () => {
       <Image src={image} alt="" />
       <Details>
         {/* <Heading>BIBLIOPHILE</Heading> */}
-
+      
       </Details>
       </Card>
     </Container>
@@ -83,7 +83,7 @@ const Text = styled.text`
   font-size: 200px;
   font-weight: 700;
   stroke-width: 3;
-  animation: ${textAnimate} 5s ease-in-out alternate;
+  /* animation: ${textAnimate} 5s ease-in-out alternate; */
 `
 
 const Details = styled.div`
