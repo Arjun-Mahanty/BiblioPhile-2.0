@@ -58,17 +58,24 @@ const DetailsPage = () => {
   return (
     <div>
       {response.length > 0 ? (
-        <div>
-          <div>
+        <Wrapper>
+          <BookDetails>
+            <BookStripe>
+            <BookImage src={response[0].book_image_link} alt="" />
+            <div>
+
             <h1>{response[0].book_name}</h1>
             <h2>{response[0].author_name}</h2>
+            <Tags>
             {response[0].tags.map((tag) => (
-              <div>{tag}</div>
-            ))}
-            <img src={response[0].book_image_link} alt="" />
-            <p>{response[0].summary}</p>
-          </div>
-          <div ref={chatRef}>
+              <Tag>{tag}</Tag>
+              ))}
+            </Tags>
+              </div>
+              </BookStripe>
+            <Summary>{response[0].summary}</Summary>
+          </BookDetails>
+          <Chat ref={chatRef}>
             <div>
               {content.map((element, index) => (
                 <Stripe key={index} isAi={element.isAi} id={generateUniqueId}>{element.text}</Stripe>
@@ -78,8 +85,8 @@ const DetailsPage = () => {
               <TextArea name="prompt" cols="1" rows="1" placeholder='Ask any doubt...'></TextArea>
               <button type='submit'>send</button>
             </form>
-          </div>
-        </div>
+          </Chat>
+        </Wrapper>
       ) : (
         <p>Loading...</p>
       )}
@@ -101,6 +108,53 @@ border-radius: 5px;
 border: none;
 outline: none;
 `
+
+const Wrapper = styled.div`
+  display: flex;
+  padding: 20px;
+`
+
+const BookDetails = styled.div`
+  width: 70%;
+  background-color: aliceblue;
+  height: 80vh;
+`
+const Summary = styled.p`
+  padding: 10px;
+`
+const Tags = styled.div`
+  display: flex;
+  gap: 5px;
+  margin: 10px;
+`;
+
+const Chat = styled.div`
+  background-color: gray;
+  width: 30%;
+  padding: 20px;
+  border: 2px solid black;
+`
+const BookStripe = styled.div`
+  display: flex;
+  background-color: gray;
+  padding: 10px;
+  border: 2px solid black;
+`
+const BookImage = styled.div`
+  margin-right: 5px;
+`
+
+const Tag = styled.div`
+   border: 1px solid black;
+  border-radius:15px;
+  text-align: center;
+  align-items: center;
+  font-size: 13px;
+  padding: 5px;
+  width:100px
+`;
+
+
 
 export default DetailsPage
 
