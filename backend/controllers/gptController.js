@@ -2,19 +2,19 @@ const { Configuration, OpenAIApi } = require("openai");
 const path = require('path')
 const dotenv = require('dotenv');
 const { OpenAI } = require("langchain/llms/openai");
-import { LLMChain } from "langchain/chains";
-import { PromptTemplate } from "langchain/prompts";
+// const  { LLMChain } = require("langchain/chains");
+// const  { PromptTemplate } = require("langchain/prompts");
 
-const llm = new OpenAI({
-    openAIApiKey:process.env.CHATGPT_API_KEY,
-  });
+// const llm = new OpenAI({
+//     openAIApiKey:process.env.CHATGPT_API_KEY,
+//   });
 
-const tagsPrompt = PromptTemplate.fromTemplate("")
+// const tagsPrompt = PromptTemplate.fromTemplate("")
 
-const tagsChain = new LLMChain({
-    llm,
-    tagsPrompt
-})
+// const tagsChain = new LLMChain({
+//     llm,
+//     tagsPrompt
+// })
 
 const envPath = path.resolve(__dirname,'../.env');
 
